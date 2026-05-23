@@ -1,23 +1,24 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { useRouter, useParams } from 'next/navigation';
+import { useState, useEffect, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { getCard, saveCard, deleteCard, BusinessCard } from '@/lib/storage';
 import { ArrowLeft, Building2, User, Phone, Mail, MapPin, Trash2, Edit2, Check } from 'lucide-react';
 
-export default function CardDetailPage() {
+function CardDetailContent() {
   const router = useRouter();
-  const params = useParams();
+  const searchParams = useSearchParams();
+  const id = searchParams.get('id');
   const [card, setCard] = useState<BusinessCard | null>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState<Partial<BusinessCard>>({});
 
   useEffect(() => {
-    if (params.id) {
-      getCard(params.id as string).then(c => {
+    if (id) {
+      getCard(id).then(c => {
         if (c) { setCard(c); setEditData(c); }
       });
     }
-  }, [params.id]);
+  }, [id]);
 
   const handleSave = async () => {
     if (!card) return;
@@ -49,7 +50,6 @@ export default function CardDetailPage() {
 
   return (
     <div className="min-h-screen bg-[#0f0f1a] flex flex-col">
-      {/* Header */}
       <div className="bg-[#1a1a2e] px-4 pt-12 pb-4">
         <div className="flex items-center justify-between">
           <button onClick={() => router.back()}>
@@ -74,7 +74,6 @@ export default function CardDetailPage() {
       </div>
 
       <div className="flex-1 overflow-y-auto">
-        {/* Card image */}
         <div className="mx-4 mt-4 rounded-2xl overflow-hidden bg-[#1a1a2e] border border-gray-700">
           {card.imageData ? (
             // eslint-disable-next-line @next/next/no-img-element
@@ -96,7 +95,6 @@ export default function CardDetailPage() {
           </div>
         </div>
 
-        {/* Fields */}
         <div className="px-4 mt-4 space-y-3 pb-8">
           {fields.map(({ label, key, icon: Icon, color }) => (
             <div key={key} className="bg-[#1a1a2e] rounded-2xl p-4">
@@ -122,5 +120,17 @@ export default function CardDetailPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function CardDetailPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-[#0f0f1a] flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin" />
+      </div>
+    }>
+      <CardDetailContent />
+    </Suspense>
   );
 }

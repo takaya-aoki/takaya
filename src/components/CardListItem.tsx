@@ -4,7 +4,7 @@ import { Building2, User, Phone } from 'lucide-react';
 
 export default function CardListItem({ card }: { card: BusinessCard }) {
   return (
-    <Link href={`/card/${card.id}`}>
+    <Link href={`/card?id=${card.id}`}>
       <div className="bg-[#1a1a2e] rounded-2xl p-4 flex gap-4 items-center active:scale-95 transition-transform">
         {/* Card thumbnail */}
         <div className="flex-shrink-0 w-24 h-16 rounded-xl overflow-hidden bg-gray-800 border border-gray-700">
