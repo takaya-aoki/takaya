@@ -1,7 +1,7 @@
 # Claude Mail
 
 GmailライクなUIで、Geminiがあなたのメールスタイルを学習し、毎回ぴったりの返信下書きを自動生成するメールアプリです。  
-やりとりはすべて **ローカルの Obsidian Vault** (`C:\Users\aoki`) に保存されます。
+やりとりはすべて **ローカルの Obsidian Vault** (`C:\Users\aoki\Obsidian Vault`) に保存されます。
 
 ## 費用
 
@@ -38,7 +38,7 @@ GOOGLE_CLIENT_SECRET=...
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=...               # 後述
 GOOGLE_AI_API_KEY=...             # Google AI Studio で無料取得
-OBSIDIAN_VAULT_PATH=C:/Users/aoki/Documents/MyVault
+OBSIDIAN_VAULT_PATH=C:/Users/aoki/Obsidian Vault
 ```
 
 > **Windows パスの注意**: `.env` ファイルではバックスラッシュを `/` に変えてください。  
@@ -70,13 +70,13 @@ OBSIDIAN_VAULT_PATH=C:/Users/aoki/Documents/MyVault
 `OBSIDIAN_VAULT_PATH` に既存の Obsidian Vault のパスを指定します：
 
 ```
-OBSIDIAN_VAULT_PATH=C:/Users/aoki/Documents/MyVault
+OBSIDIAN_VAULT_PATH=C:/Users/aoki/Obsidian Vault
 ```
 
 アプリ起動後、Vault 内に以下のフォルダが自動作成されます：
 
 ```
-C:\Users\aoki\Documents\MyVault\
+C:\Users\aoki\Obsidian Vault\
   Email Intelligence\
     Contacts\      ← 相手ごとの通信スタイル (.md)
     Patterns\      ← あなたの書き方スタイル
@@ -97,7 +97,7 @@ npm run dev
 
 1. **メールを開く** → Gemini がスレッド + ローカルの Obsidian 学習データを読み込んで下書きを生成
 2. **送信ボタンを押す** → Gmail 経由で送信、バックグラウンドでやりとりを分析
-3. **ローカルに保存** → `C:\Users\aoki\...\Email Intelligence\` に相手プロファイルとスタイルが更新
+3. **ローカルに保存** → `C:\Users\aoki\Obsidian Vault\Email Intelligence\` に相手プロファイルとスタイルが更新
 4. **次回はさらに精度が上がる** → 繰り返すたびに下書きがあなたの返信に近づく
 
 ## 技術スタック
@@ -106,5 +106,5 @@ npm run dev
 - **next-auth** (Google OAuth2)
 - **Gmail API** (googleapis)
 - **Google AI Studio** (`gemini-1.5-flash` — 無料枠)
-- **Obsidian** (C:\Users\aoki — ローカル保存)
+- **Obsidian** (C:\Users\aoki\Obsidian Vault — ローカル保存)
 - **Tailwind CSS**
