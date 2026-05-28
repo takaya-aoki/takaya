@@ -1,0 +1,15 @@
+# Obsidian workspace state (device-specific, do not sync)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# Plugin credentials (IMPORTANT: never commit tokens)
+.obsidian/plugins/obsidian-git/data.json
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Temporary files
+.trash/
