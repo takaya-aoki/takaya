@@ -1,0 +1,202 @@
+settings:
+  min_units: 50
+  timeout: 10
+  max_workers: 10
+  gemini_model: "gemini-1.5-flash"
+
+sources:
+  # ========== 東京都 ==========
+  - id: tokyo_eia
+    name: 東京都 環境影響評価
+    url: https://www.kankyo.metro.tokyo.lg.jp/assessment/procedure/
+    prefecture: 東京
+    category: 環境影響評価
+
+  - id: tokyo_urban_plan
+    name: 東京都 都市計画（都市整備局）
+    url: https://www.toshiseibi.metro.tokyo.lg.jp/keikaku/
+    prefecture: 東京
+    category: 都市計画決定
+
+  - id: tokyo_dev_permit
+    name: 東京都 開発許可
+    url: https://www.toshiseibi.metro.tokyo.lg.jp/kenchiku/kaihatsu/
+    prefecture: 東京
+    category: 開発許可
+
+  - id: chiyoda_urban
+    name: 千代田区 まちづくり情報
+    url: https://www.city.chiyoda.lg.jp/koho/machi/toshi/index.html
+    prefecture: 東京
+    category: 都市計画決定
+
+  - id: koto_urban
+    name: 江東区 都市計画
+    url: https://www.city.koto.lg.jp/390101/machizukuri/toshikeikaku/
+    prefecture: 東京
+    category: 都市計画決定
+
+  - id: sumida_urban
+    name: 墨田区 都市計画
+    url: https://www.city.sumida.lg.jp/kuseijoho/sumida_info/toshikeikaku/
+    prefecture: 東京
+    category: 都市計画決定
+
+  - id: setagaya_urban
+    name: 世田谷区 都市整備
+    url: https://www.city.setagaya.lg.jp/mokuji/sumai/001/index.html
+    prefecture: 東京
+    category: 都市計画決定
+
+  - id: nerima_dev
+    name: 練馬区 開発許可
+    url: https://www.city.nerima.tokyo.jp/kurashi/machi/kenchiku/kaihatsu/
+    prefecture: 東京
+    category: 開発許可
+
+  - id: adachi_urban
+    name: 足立区 まちづくり
+    url: https://www.city.adachi.tokyo.jp/toshikeikaku/
+    prefecture: 東京
+    category: 都市計画決定
+
+  - id: edogawa_dev
+    name: 江戸川区 開発許可
+    url: https://www.city.edogawa.tokyo.jp/e017/jigyousha/machi/kaihatsu/index.html
+    prefecture: 東京
+    category: 開発許可
+
+  # ========== 神奈川県 ==========
+  - id: kanagawa_eia
+    name: 神奈川県 環境影響評価
+    url: https://www.pref.kanagawa.jp/docs/ap4/index.html
+    prefecture: 神奈川
+    category: 環境影響評価
+
+  - id: kanagawa_urban
+    name: 神奈川県 都市計画
+    url: https://www.pref.kanagawa.jp/docs/yd6/cnt/f530156/index.html
+    prefecture: 神奈川
+    category: 都市計画決定
+
+  - id: yokohama_dev_permit
+    name: 横浜市 開発許可
+    url: https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchikumachizukuri/kaihatsukyoka/
+    prefecture: 神奈川
+    category: 開発許可
+
+  - id: yokohama_urban
+    name: 横浜市 都市計画決定
+    url: https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchikumachizukuri/toshikeikaku/
+    prefecture: 神奈川
+    category: 都市計画決定
+
+  - id: kawasaki_urban
+    name: 川崎市 都市計画
+    url: https://www.city.kawasaki.jp/530/category/59-6-0-0-0-0-0-0-0-0.html
+    prefecture: 神奈川
+    category: 都市計画決定
+
+  - id: kawasaki_dev
+    name: 川崎市 開発許可
+    url: https://www.city.kawasaki.jp/530/page/0000030247.html
+    prefecture: 神奈川
+    category: 開発許可
+
+  - id: sagamihara_urban
+    name: 相模原市 都市計画
+    url: https://www.city.sagamihara.kanagawa.jp/shisei/keikaku/1010614.html
+    prefecture: 神奈川
+    category: 都市計画決定
+
+  # ========== 埼玉県 ==========
+  - id: saitama_eia
+    name: 埼玉県 環境影響評価
+    url: https://www.pref.saitama.lg.jp/a0501/kankyoeikyohyouka/
+    prefecture: 埼玉
+    category: 環境影響評価
+
+  - id: saitama_urban
+    name: 埼玉県 都市計画
+    url: https://www.pref.saitama.lg.jp/a1003/toshikeikaku/index.html
+    prefecture: 埼玉
+    category: 都市計画決定
+
+  - id: saitama_city_dev
+    name: さいたま市 開発許可
+    url: https://www.city.saitama.jp/002/001/012/001/index.html
+    prefecture: 埼玉
+    category: 開発許可
+
+  - id: saitama_city_urban
+    name: さいたま市 都市計画
+    url: https://www.city.saitama.jp/002/001/001/index.html
+    prefecture: 埼玉
+    category: 都市計画決定
+
+  - id: kawaguchi_dev
+    name: 川口市 開発許可
+    url: https://www.city.kawaguchi.lg.jp/soshiki/05/12/gyomu/11568.html
+    prefecture: 埼玉
+    category: 開発許可
+
+  - id: tokorozawa_urban
+    name: 所沢市 都市計画
+    url: https://www.city.tokorozawa.saitama.jp/machizukuri/toshikeikaku/
+    prefecture: 埼玉
+    category: 都市計画決定
+
+  - id: koshigaya_urban
+    name: 越谷市 都市計画
+    url: https://www.city.koshigaya.saitama.jp/kurashi_shisei/toshi/toshikeikaku/
+    prefecture: 埼玉
+    category: 都市計画決定
+
+  # ========== 千葉県 ==========
+  - id: chiba_eia
+    name: 千葉県 環境影響評価
+    url: https://www.pref.chiba.lg.jp/taiki/kankyoueikyouhyouka/
+    prefecture: 千葉
+    category: 環境影響評価
+
+  - id: chiba_urban
+    name: 千葉県 都市計画
+    url: https://www.pref.chiba.lg.jp/toshi/toshikeikaku/
+    prefecture: 千葉
+    category: 都市計画決定
+
+  - id: chiba_city_dev
+    name: 千葉市 開発許可
+    url: https://www.city.chiba.jp/toshi/kaihatsu/kyoka/
+    prefecture: 千葉
+    category: 開発許可
+
+  - id: chiba_city_urban
+    name: 千葉市 都市計画
+    url: https://www.city.chiba.jp/toshi/toshikeikaku/
+    prefecture: 千葉
+    category: 都市計画決定
+
+  - id: funabashi_urban
+    name: 船橋市 都市計画
+    url: https://www.city.funabashi.lg.jp/machizukuri/toshi/toshikeikaku/
+    prefecture: 千葉
+    category: 都市計画決定
+
+  - id: kashiwa_dev
+    name: 柏市 開発許可
+    url: https://www.city.kashiwa.lg.jp/toshi/toshikeikaku/kaihatsu/
+    prefecture: 千葉
+    category: 開発許可
+
+  - id: ichikawa_urban
+    name: 市川市 都市計画
+    url: https://www.city.ichikawa.lg.jp/plan01/
+    prefecture: 千葉
+    category: 都市計画決定
+
+  - id: matsudo_urban
+    name: 松戸市 都市計画
+    url: https://www.city.matsudo.chiba.jp/kurashi/machizukuri_toshi/toshikeikaku/
+    prefecture: 千葉
+    category: 都市計画決定
